@@ -73,13 +73,36 @@ position:relative;
 
 /* login */
 
+/* LOGIN BOX DESIGN */
+
 .login{
-background:white;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+width:350px;
+padding:45px 40px;
+background:linear-gradient(145deg,#ffffff,#f0f0f0);
+
+border-radius:25px;
+
+/* 3D Shadow Effect */
+box-shadow:
+10px 10px 25px rgba(0,0,0,0.15),
+-10px -10px 25px rgba(255,255,255,0.7);
+
+/* Border for depth */
+border:1px solid rgba(255,255,255,0.5);
+
+/* Smooth animation */
+transition:0.4s ease;
+
+backdrop-filter:blur(10px);
 }
 
+/* Hover effect */
+.login:hover{
+transform:translateY(-6px) scale(1.02);
+box-shadow:
+15px 15px 35px rgba(0,0,0,0.2),
+-15px -15px 35px rgba(255,255,255,0.9);
+}
 /* falling animation */
 
 @keyframes fall{
@@ -200,17 +223,17 @@ p{font-size:16px}
 
 <div class="page" id="page2">
 
-<h1>Hello Irmak</h1>
+<h1>Hey my love Irmak</h1>
 
 <img src="https://media.giphy.com/media/Ie4CIIvQS0bk3zwZlM/giphy.gif">
 
 <p>
-This small website may look simple, but it was created with care.
-Each page contains a small message from the heart.
-Sometimes feelings are difficult to say directly,
-so I thought creating something like this would be a better way.
-Every page you open is a small moment, a small thought,
-and a quiet feeling written especially for you.
+This little surprise may look simple at first, but every part of it was made with care and genuine feelings.
+Sometimes words are not easy to say directly, so I created this small space where my heart could speak a little more freely.
+Each page you open holds a small thought, a quiet emotion, and a moment that reminded me of you.
+Maybe it’s not something big or perfect, but it carries something real — my appreciation for you, my thoughts about you, and the little happiness your presence brings into my life.
+So take your time, explore each page slowly…
+because every part of this was written especially for you, Irmak.
 </p>
 
 <button onclick="next()">Next</button>
@@ -226,12 +249,10 @@ and a quiet feeling written especially for you.
 <img src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyNnlyY28xMzJrdGY3cTU0aWZ3a2poYW13dWViNWh4bGJ0bHlwb3kyOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OE1n1TDwuXryg/giphy.gif">
 
 <p>
-Some people enter our lives quietly,
-yet they leave a lasting impression.
-You may not even realize it,
-but your presence can make ordinary days feel warmer.
-Sometimes just knowing someone like you exists
-makes the world feel a little brighter.
+You came into my life quietly, but your presence created something special.
+Maybe you don’t even realize it, but the way you exist, the way you speak, and the way you are… it makes ordinary days feel warmer and a little more meaningful.
+Sometimes just knowing that you are there somewhere in this world brings a small kind of comfort and happiness.
+You might see this as something simple, but the truth is — you made moments feel brighter just by being you.
 </p>
 
 <button onclick="next()">Next</button>
@@ -248,9 +269,9 @@ makes the world feel a little brighter.
 
 <p id="heartMsg" style="display:none">
 Some feelings are difficult to explain with words.
-They appear quietly in the heart and slowly grow stronger.
-Sometimes a person becomes important
-without any big moment or reason.
+They appear quietly in the heart and slowly grow stronger with time.
+Sometimes you become important in someone’s life without any big moment, without any special reason.
+It just happens naturally… and before you even realize it, your presence begins to mean more than you ever expected.
 </p>
 
 <button onclick="next()">Next</button>
@@ -266,11 +287,11 @@ without any big moment or reason.
 <img src="https://media.giphy.com/media/QaFPEW8KKvouyhQPaj/giphy.gif">
 
 <p>
-Before certain people enter our lives,
-everything feels ordinary.
-But sometimes someone appears unexpectedly
-and suddenly the smallest moments
-begin to feel meaningful.
+Before you came into my life, everything felt ordinary.
+Days passed quietly, moments felt simple, and nothing really stood out in a special way.
+But somehow, when you appeared, even the smallest moments started to feel different.
+A simple conversation, a small smile, or even the thought of you could suddenly make an ordinary day feel a little more meaningful.
+It’s strange how one person can quietly change the feeling of so many moments… just by being there..
 </p>
 
 <button onclick="next()">Next</button>
@@ -293,15 +314,14 @@ I Love You<br>Irmak ❤️
 
 <p>
 
-If emotions were simple, explaining everything would be easy.
-But feelings are rarely simple.
-
-Sometimes people become important without us even realizing when it happened.
-One day you simply notice that someone has quietly found
-a permanent place inside your heart.
-
-And once that happens,
+If emotions were simple, explaining them would be easy.
+But feelings are rarely that simple.
+Sometimes you become important in someone’s life without either of us even realizing when it started.
+There isn’t always a big moment or a clear reason.
+One day you just notice that you’ve quietly found a place inside someone’s heart.
+And once that happens…
 that place never truly disappears.
+
 
 </p>
 
@@ -319,8 +339,12 @@ that place never truly disappears.
 
 <p>
 Life rarely follows the plans we imagine.
-Sometimes the most beautiful emotions
-appear in the most unexpected ways.
+We think we know how things will unfold, how our days will pass, and who will walk beside us along the way. But somehow, life has its own quiet surprises.
+Sometimes the most beautiful emotions arrive in the most unexpected ways.
+Not with noise, not with grand moments, but slowly… gently… like a feeling that grows without asking for permission.
+And before you even realize it, someone begins to mean more to you than you ever planned.
+That’s the strange beauty of life —
+sometimes the moments we never planned, and the people we never expected, end up becoming the ones our hearts care about the most.
 </p>
 
 <button onclick="next()">Next</button>
@@ -336,11 +360,13 @@ appear in the most unexpected ways.
 <img src="https://media.giphy.com/media/ha6vsupXjJVMZ4WJsT/giphy.gif">
 
 <p>
-Thank you for the conversations,
-the smiles,
-and the warmth you bring into the world.
-Sometimes even small interactions
-can make someone’s entire day brighter.
+Thank you for the conversations we’ve shared,
+for the small moments of laughter,
+and for the warmth you bring just by being yourself.
+You may not always realize it, but the way you speak, the way you smile, and the way you exist can make ordinary moments feel a little brighter.
+Sometimes even the simplest conversations can turn a normal day into something memorable.
+And in ways you might not even notice, you’ve brought a quiet kind of happiness into moments that would have otherwise been just another ordinary day.
+
 </p>
 
 <button onclick="next()">Next</button>
@@ -354,10 +380,12 @@ can make someone’s entire day brighter.
 <h1>Always Special</h1>
 
 <p>
-Time changes many things in life,
-but some people remain special forever.
-Not because of dramatic stories,
-but because their presence once meant something real.
+Time changes many things in life.
+Days pass, moments fade, and life keeps moving forward in ways we never fully expect.
+But sometimes there are certain people who remain special no matter how much time passes.
+Not because of dramatic stories or unforgettable scenes, but because their presence once meant something real… something sincere.
+And when someone becomes meaningful in that quiet, genuine way, they leave a place in the heart that time can never truly erase.
+
 </p>
 
 <button onclick="next()">Next</button>
@@ -371,12 +399,17 @@ but because their presence once meant something real.
 <h1>Irmak ❤️</h1>
 
 <p>
-At the end of this small journey,
-there is one simple truth:
-some people become memories,
-some become stories,
-and some quietly become
-a permanent place inside the heart.
+And now, as this little journey reaches its final page, there is something I want to say from the bottom of my heart.
+In life we meet many people. Some become memories, some become stories that fade with time.
+But very rarely, someone comes into our life and becomes everything.
+For me, that person is you.
+You are not just someone special to me — you are the reason many of my days feel brighter, calmer, and happier. Your smile, your voice, and your presence bring a kind of warmth into my life that I can’t describe completely with words.
+And the truth is simple…
+there is no one else for me.
+In my life, in my heart, it has always been you.
+I love you, Irmak.
+More than words can ever fully explain.
+  
 </p>
 
 </div>
@@ -457,4 +490,5 @@ setTimeout(()=>f.remove(),1500)
 
 </body>
 </html>
+
 
