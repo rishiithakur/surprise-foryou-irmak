@@ -3,21 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>For Irmak ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
-*{box-sizing:border-box}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
 body{
-margin:0;
 font-family:Poppins;
-background:linear-gradient(135deg,#ffe6ea,#fff);
-overflow:hidden;
+background:linear-gradient(180deg,#14081f,#000);
+color:white;
 text-align:center;
+overflow:hidden;
 }
+
+/* page */
 
 .page{
 position:absolute;
@@ -27,11 +34,10 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+padding:20px;
 opacity:0;
 transition:1s;
 pointer-events:none;
-padding:20px;
-z-index:2;
 }
 
 .page.active{
@@ -41,96 +47,88 @@ pointer-events:auto;
 
 h1{
 font-family:"Great Vibes";
-font-size:50px;
-color:#c45a6a;
+font-size:clamp(32px,5vw,55px);
+color:#ff9ab7;
 }
 
 p{
 max-width:700px;
-font-size:18px;
+font-size:clamp(16px,2.5vw,20px);
 line-height:1.8;
-position:relative;
-z-index:3;
 }
+
+/* typing */
+
+.typing{
+border-right:3px solid pink;
+white-space:nowrap;
+overflow:hidden;
+animation:typing 4s steps(40,end),blink .8s infinite;
+}
+
+@keyframes typing{
+from{width:0}
+to{width:100%}
+}
+
+@keyframes blink{
+50%{border-color:transparent}
+}
+
+/* button */
 
 button{
-margin-top:20px;
+margin-top:25px;
 padding:12px 30px;
 border:none;
-border-radius:25px;
-background:#ffb6c1;
-cursor:pointer;
+border-radius:30px;
+background:#ff4d88;
+color:white;
 font-size:16px;
-}
-
-img{
-max-width:320px;
-width:90%;
-border-radius:15px;
-z-index:3;
-position:relative;
+cursor:pointer;
 }
 
 /* login */
 
-/* LOGIN BOX DESIGN */
-
 .login{
-width:350px;
-padding:45px 40px;
-background:linear-gradient(145deg,#ffffff,#f0f0f0);
-
-border-radius:25px;
-
-/* 3D Shadow Effect */
-box-shadow:
-10px 10px 25px rgba(0,0,0,0.15),
--10px -10px 25px rgba(255,255,255,0.7);
-
-/* Border for depth */
-border:1px solid rgba(255,255,255,0.5);
-
-/* Smooth animation */
-transition:0.4s ease;
-
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:20px;
 backdrop-filter:blur(10px);
+width:90%;
+max-width:350px;
 }
 
-/* Hover effect */
-.login:hover{
-transform:translateY(-6px) scale(1.02);
-box-shadow:
-15px 15px 35px rgba(0,0,0,0.2),
--15px -15px 35px rgba(255,255,255,0.9);
-}
-/* falling animation */
-
-@keyframes fall{
-0%{transform:translateY(-10vh)}
-100%{transform:translateY(110vh)}
+input{
+width:100%;
+padding:12px;
+margin:8px 0;
+border-radius:10px;
+border:none;
 }
 
-@keyframes up{
-0%{transform:translateY(0)}
-100%{transform:translateY(-110vh)}
+/* gif */
+
+img{
+max-width:320px;
+width:90%;
+border-radius:12px;
+margin:10px;
 }
 
-/* beating heart */
+/* heart */
 
 .bigHeart{
 font-size:90px;
 cursor:pointer;
-animation:heartbeat 1.3s infinite;
+animation:beat 1.2s infinite;
 }
 
-@keyframes heartbeat{
+@keyframes beat{
 0%{transform:scale(1)}
-25%{transform:scale(1.2)}
-50%{transform:scale(1)}
-75%{transform:scale(1.15)}
+50%{transform:scale(1.2)}
 100%{transform:scale(1)}
 }
-
 /* 3D heart */
 
 .realHeart{
@@ -175,22 +173,21 @@ text-align:center;
 padding:10px;
 
 }
+/* particles */
 
-@keyframes heartBeat{
-
-0%{transform:scale(1)}
-25%{transform:scale(1.12)}
-50%{transform:scale(1)}
-75%{transform:scale(1.1)}
-100%{transform:scale(1)}
-
+.particle{
+position:fixed;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+opacity:.6;
+animation:float 6s linear infinite;
 }
 
-/* responsive */
-
-@media(max-width:768px){
-h1{font-size:38px}
-p{font-size:16px}
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-10vh)}
 }
 
 </style>
@@ -198,9 +195,152 @@ p{font-size:16px}
 
 <body>
 
-<audio autoplay loop>
-<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8a73467.mp3">
-</audio>
+<div class="page active" id="page1">
+
+<div class="login">
+
+<h1>Private Message ❤️</h1>
+
+<input id="id" placeholder="Login ID">
+<input id="pass" type="password" placeholder="Password">
+
+<button onclick="login()">Enter</button>
+
+</div>
+
+</div>
+
+<div class="page" id="page2">
+
+<h1 class="typing">Hey my love Irmak</h1>
+
+<img src="https://media.giphy.com/media/Ie4CIIvQS0bk3zwZlM/giphy.gif">
+
+<p>
+This little surprise may look simple but every part of it was made with care and real feelings.
+</p>
+
+<button onclick="next()">Next</button>
+
+</div>
+
+<div class="page" id="page3">
+
+<h1>A Small Truth</h1>
+
+<img src="https://media.giphy.com/media/OE1n1TDwuXryg/giphy.gif">
+
+<p>
+You came into my life quietly but created something special.
+</p>
+
+<button onclick="next()">Next</button>
+
+</div>
+
+<div class="page" id="page4">
+
+<h1>Click The Heart</h1>
+
+<div class="bigHeart" onclick="showText()">❤️</div>
+
+<p id="heartMsg" style="display:none">
+Sometimes feelings grow slowly until someone becomes very important.
+</p>
+
+<button onclick="next()">Next</button>
+
+</div>
+
+<div class="page" id="page5">
+
+<h1>Life Changed</h1>
+
+<img src="https://media.giphy.com/media/QaFPEW8KKvouyhQPaj/giphy.gif">
+
+<p>
+Before you came everything was ordinary.
+</p>
+
+<button onclick="next()">Next</button>
+
+</div>
+<div class="page" id="page6">
+
+<h1>My Heart</h1>
+
+<img src="https://media.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.gif">
+
+<p>
+Sometimes feelings are difficult to explain.
+They grow slowly, quietly, until one day you realize
+someone has become a permanent part of your heart.
+</p>
+
+<button onclick="next()">Next</button>
+
+</div>
+
+
+<div class="page" id="page7">
+
+<h1>Unexpected Feelings</h1>
+
+<img src="https://media.giphy.com/media/v6GDwXiHIWqJy/giphy.gif">
+
+<p>
+Life rarely follows the plans we imagine.
+Sometimes the most beautiful emotions appear
+when we least expect them.
+</p>
+
+<button onclick="next()">Next</button>
+
+</div>
+
+
+<div class="page" id="page8">
+
+<h1>Thank You</h1>
+
+<img src="https://media.giphy.com/media/ha6vsupXjJVMZ4WJsT/giphy.gif">
+
+<p>
+Thank you for the conversations,
+for the small smiles,
+and for the warmth you bring
+simply by being yourself.
+</p>
+
+<button onclick="next()">Next</button>
+
+</div>
+
+
+<div class="page" id="page9">
+
+<h1>Always Special</h1>
+
+<img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
+
+<p>
+Time changes many things in life,
+but some people remain special forever.
+Your presence created a place in my heart
+that time will never erase.
+</p>
+
+<button onclick="next()">Next</button>
+
+</div>
+
+
+<div class="page" id="page10">
+
+<h1>I Love You Irmak ❤️</h1>
+
+<img src="https://media.giphy.com/media/26BRuo6sLetdllPAQ/giphy.gif">
+
 
 <!-- LOGIN -->
 
@@ -414,120 +554,91 @@ More than words can ever fully explain.
 
 </div>
 
+
 <script>
 
 let page=1
 
 function login(){
+
 let id=document.getElementById("id").value
 let pass=document.getElementById("pass").value
-if(id==="Irmak" && pass==="25DEC2001"){next()} else{alert("Wrong login")}
+
+if(id==="Irmak" && pass==="25DEC2001"){
+next()
+}else{
+alert("Wrong login")
+}
+
 }
 
 function next(){
+
 document.getElementById("page"+page).classList.remove("active")
+
 page++
+
 document.getElementById("page"+page).classList.add("active")
-if(page===10){fireworks()}
+
+if(page===10){
+fireworks()
 }
 
-function showHeartMessage(){
+}
+
+function showText(){
+
 document.getElementById("heartMsg").style.display="block"
+
 }
 
-function rain(icon){
-let obj=document.createElement("img")
-obj.src=icon
-obj.style.position="fixed"
-obj.style.width="28px"
-obj.style.left=Math.random()*100+"vw"
-obj.style.top="-30px"
-obj.style.animation="fall 8s linear"
-obj.style.zIndex="1"
-obj.style.pointerEvents="none"
-document.body.appendChild(obj)
-setTimeout(()=>obj.remove(),8000)
-}
+
+/* particles */
 
 setInterval(()=>{
-if(page===2){rain("https://cdn-icons-png.flaticon.com/128/17586/17586996.png")}
-if(page===3){rain("https://cdn-icons-png.flaticon.com/128/13766/13766096.png")}
-if(page===4){rain("https://cdn-icons-png.flaticon.com/128/15617/15617962.png")}
-if(page===5){rain("https://cdn-icons-png.flaticon.com/128/677/677684.png")}
-if(page===6){rain("https://cdn-icons-png.flaticon.com/128/693/693423.png")}
-if(page===7){rain("https://cdn-icons-png.flaticon.com/128/4490/4490029.png")}
-},400)
 
-setInterval(()=>{
-let dot=document.createElement("div")
-dot.style.position="fixed"
-dot.style.width="8px"
-dot.style.height="8px"
-dot.style.background="red"
-dot.style.borderRadius="50%"
-dot.style.bottom="-10px"
-dot.style.left=Math.random()*100+"vw"
-dot.style.animation="up 6s linear"
-dot.style.zIndex="1"
-document.body.appendChild(dot)
-setTimeout(()=>dot.remove(),6000)
-},300)
+let p=document.createElement("div")
+
+p.className="particle"
+
+p.style.left=Math.random()*100+"vw"
+
+p.style.animationDuration=4+Math.random()*4+"s"
+
+document.body.appendChild(p)
+
+setTimeout(()=>p.remove(),6000)
+
+},200)
+
+
+/* fireworks */
 
 function fireworks(){
+
 setInterval(()=>{
+
 let f=document.createElement("div")
+
 f.innerHTML="🎆"
+
 f.style.position="fixed"
+
 f.style.left=Math.random()*100+"vw"
+
 f.style.top=Math.random()*100+"vh"
+
 f.style.fontSize="40px"
+
 document.body.appendChild(f)
+
 setTimeout(()=>f.remove(),1500)
+
 },300)
-}
-/* RESPONSIVE FIX */
 
-body{
-margin:0;
-padding:20px;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-overflow-x:hidden;
 }
 
-.container{
-width:100%;
-max-width:700px;
-margin:auto;
-}
-
-/* Text auto resize */
-
-p{
-font-size:clamp(16px,2.5vw,22px);
-line-height:1.7;
-}
-
-h1{
-font-size:clamp(28px,5vw,45px);
-}
-
-/* login box responsive */
-
-.login{
-width:100%;
-max-width:420px;
-padding:40px 30px;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
-  
 </script>
 
 </body>
 </html>
-
-
-
