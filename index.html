@@ -490,5 +490,43 @@ setTimeout(()=>f.remove(),1500)
 
 </body>
 </html>
+/* RESPONSIVE FIX */
+
+body{
+margin:0;
+padding:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+.container{
+width:100%;
+max-width:700px;
+margin:auto;
+}
+
+/* Text auto resize */
+
+p{
+font-size:clamp(16px,2.5vw,22px);
+line-height:1.7;
+}
+
+h1{
+font-size:clamp(28px,5vw,45px);
+}
+
+/* login box responsive */
+
+.login{
+width:100%;
+max-width:420px;
+padding:40px 30px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
 
 
