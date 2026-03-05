@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,79 +11,48 @@
 
 <style>
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
+*{box-sizing:border-box}
 
 body{
+margin:0;
 font-family:Poppins;
-background:linear-gradient(180deg,#14081f,#000);
-color:white;
-text-align:center;
-overflow:hidden;
+background:linear-gradient(135deg,#ffe6ea,#fff);
+zoom:85%;
+overflow-x:hidden;
 }
 
-/* page */
-
 .page{
-position:absolute;
-width:100%;
-height:100vh;
-display:flex;
+min-height:100vh;
+display:none;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:20px;
-opacity:0;
-transition:1s;
-pointer-events:none;
+padding:40px 20px;
+text-align:center;
 }
 
 .page.active{
-opacity:1;
-pointer-events:auto;
+display:flex;
 }
 
 h1{
 font-family:"Great Vibes";
-font-size:clamp(32px,5vw,55px);
-color:#ff9ab7;
+font-size:52px;
+color:#d94b6a;
 }
 
 p{
-max-width:700px;
-font-size:clamp(16px,2.5vw,20px);
+max-width:750px;
+font-size:18px;
 line-height:1.8;
 }
-
-/* typing */
-
-.typing{
-border-right:3px solid pink;
-white-space:nowrap;
-overflow:hidden;
-animation:typing 4s steps(40,end),blink .8s infinite;
-}
-
-@keyframes typing{
-from{width:0}
-to{width:100%}
-}
-
-@keyframes blink{
-50%{border-color:transparent}
-}
-
-/* button */
 
 button{
 margin-top:25px;
 padding:12px 30px;
 border:none;
 border-radius:30px;
-background:#ff4d88;
+background:#ff8fa3;
 color:white;
 font-size:16px;
 cursor:pointer;
@@ -91,109 +61,68 @@ cursor:pointer;
 /* login */
 
 .login{
-background:rgba(255,255,255,0.05);
+background:white;
 padding:40px;
 border-radius:20px;
-backdrop-filter:blur(10px);
-width:90%;
-max-width:350px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
-input{
-width:100%;
-padding:12px;
-margin:8px 0;
-border-radius:10px;
-border:none;
-}
-
-/* gif */
-
-img{
-max-width:320px;
-width:90%;
-border-radius:12px;
-margin:10px;
-}
-
-/* heart */
-
-.bigHeart{
-font-size:90px;
-cursor:pointer;
-animation:beat 1.2s infinite;
-}
-
-@keyframes beat{
-0%{transform:scale(1)}
-50%{transform:scale(1.2)}
-100%{transform:scale(1)}
-}
-/* 3D heart */
-
-.realHeart{
-
-width:220px;
-height:200px;
-background:linear-gradient(145deg,#ff3c68,#ff6f91);
-
-clip-path:polygon(
-50% 15%,
-61% 0,
-75% 5%,
-90% 20%,
-90% 40%,
-75% 65%,
-50% 90%,
-25% 65%,
-10% 40%,
-10% 20%,
-25% 5%,
-39% 0
-);
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-margin:20px auto;
-
-animation:heartBeat 1.2s infinite;
-
-box-shadow:0 10px 40px rgba(0,0,0,0.25);
-
-}
-
-.heartText{
-
-color:white;
-font-family:"Great Vibes";
-font-size:26px;
-text-align:center;
+.login input{
+display:block;
+margin:10px auto;
 padding:10px;
-
+width:220px;
+border-radius:10px;
+border:1px solid #ccc;
 }
-/* particles */
 
-.particle{
+/* floating hearts */
+
+.heart{
 position:fixed;
-width:6px;
-height:6px;
-background:white;
-border-radius:50%;
-opacity:.6;
-animation:float 6s linear infinite;
+color:#ff4d6d;
+animation:float 8s linear infinite;
+opacity:0.6;
 }
 
 @keyframes float{
 0%{transform:translateY(100vh)}
-100%{transform:translateY(-10vh)}
+100%{transform:translateY(-20vh)}
+}
+
+/* heart beat */
+
+.bigHeart{
+font-size:90px;
+cursor:pointer;
+animation:beat 1.3s infinite;
+}
+
+@keyframes beat{
+0%{transform:scale(1)}
+25%{transform:scale(1.2)}
+50%{transform:scale(1)}
+75%{transform:scale(1.15)}
+100%{transform:scale(1)}
+}
+
+img{
+max-width:350px;
+width:90%;
+border-radius:15px;
 }
 
 </style>
+
 </head>
 
 <body>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c8c8a73467.mp3">
+</audio>
+
+<!-- LOGIN -->
 
 <div class="page active" id="page1">
 
@@ -210,170 +139,24 @@ animation:float 6s linear infinite;
 
 </div>
 
-<div class="page" id="page2">
-
-<h1 class="typing">Hey my love Irmak</h1>
-
-<img src="https://media.giphy.com/media/Ie4CIIvQS0bk3zwZlM/giphy.gif">
-
-<p>
-This little surprise may look simple but every part of it was made with care and real feelings.
-</p>
-
-<button onclick="next()">Next</button>
-
-</div>
-
-<div class="page" id="page3">
-
-<h1>A Small Truth</h1>
-
-<img src="https://media.giphy.com/media/OE1n1TDwuXryg/giphy.gif">
-
-<p>
-You came into my life quietly but created something special.
-</p>
-
-<button onclick="next()">Next</button>
-
-</div>
-
-<div class="page" id="page4">
-
-<h1>Click The Heart</h1>
-
-<div class="bigHeart" onclick="showText()">❤️</div>
-
-<p id="heartMsg" style="display:none">
-Sometimes feelings grow slowly until someone becomes very important.
-</p>
-
-<button onclick="next()">Next</button>
-
-</div>
-
-<div class="page" id="page5">
-
-<h1>Life Changed</h1>
-
-<img src="https://media.giphy.com/media/QaFPEW8KKvouyhQPaj/giphy.gif">
-
-<p>
-Before you came everything was ordinary.
-</p>
-
-<button onclick="next()">Next</button>
-
-</div>
-<div class="page" id="page6">
-
-<h1>My Heart</h1>
-
-<img src="https://media.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.gif">
-
-<p>
-Sometimes feelings are difficult to explain.
-They grow slowly, quietly, until one day you realize
-someone has become a permanent part of your heart.
-</p>
-
-<button onclick="next()">Next</button>
-
-</div>
-
-
-<div class="page" id="page7">
-
-<h1>Unexpected Feelings</h1>
-
-<img src="https://media.giphy.com/media/v6GDwXiHIWqJy/giphy.gif">
-
-<p>
-Life rarely follows the plans we imagine.
-Sometimes the most beautiful emotions appear
-when we least expect them.
-</p>
-
-<button onclick="next()">Next</button>
-
-</div>
-
-
-<div class="page" id="page8">
-
-<h1>Thank You</h1>
-
-<img src="https://media.giphy.com/media/ha6vsupXjJVMZ4WJsT/giphy.gif">
-
-<p>
-Thank you for the conversations,
-for the small smiles,
-and for the warmth you bring
-simply by being yourself.
-</p>
-
-<button onclick="next()">Next</button>
-
-</div>
-
-
-<div class="page" id="page9">
-
-<h1>Always Special</h1>
-
-<img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif">
-
-<p>
-Time changes many things in life,
-but some people remain special forever.
-Your presence created a place in my heart
-that time will never erase.
-</p>
-
-<button onclick="next()">Next</button>
-
-</div>
-
-
-<div class="page" id="page10">
-
-<h1>I Love You Irmak ❤️</h1>
-
-<img src="https://media.giphy.com/media/26BRuo6sLetdllPAQ/giphy.gif">
-
-
-<!-- LOGIN -->
-
-<div class="page active" id="page1">
-
-<div class="login">
-
-<h1>Private Message ❤️</h1>
-
-<input id="id" placeholder="Login ID"><br>
-<input id="pass" type="password" placeholder="Password"><br>
-
-<button onclick="login()">Enter</button>
-
-</div>
-
-</div>
-
 <!-- PAGE 2 -->
 
 <div class="page" id="page2">
 
-<h1>Hey my love Irmak</h1>
+<h1>Hello Irmak</h1>
 
 <img src="https://media.giphy.com/media/Ie4CIIvQS0bk3zwZlM/giphy.gif">
 
 <p>
-This little surprise may look simple at first, but every part of it was made with care and genuine feelings.
-Sometimes words are not easy to say directly, so I created this small space where my heart could speak a little more freely.
-Each page you open holds a small thought, a quiet emotion, and a moment that reminded me of you.
-Maybe it’s not something big or perfect, but it carries something real — my appreciation for you, my thoughts about you, and the little happiness your presence brings into my life.
-So take your time, explore each page slowly…
-because every part of this was written especially for you, Irmak.
+
+This small website was created only for you, Irmak.
+It may look simple, but every page here carries a small piece of my thoughts.
+Sometimes feelings are difficult to explain directly in conversations,
+so I decided to create something different.
+
+Each page you open is like turning a page of a quiet story,
+a story where every word is written only for you.
+
 </p>
 
 <button onclick="next()">Next</button>
@@ -384,15 +167,21 @@ because every part of this was written especially for you, Irmak.
 
 <div class="page" id="page3">
 
-<h1>A Small Truth</h1>
+<h1>A Little Truth</h1>
 
-<img src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyNnlyY28xMzJrdGY3cTU0aWZ3a2poYW13dWViNWh4bGJ0bHlwb3kyOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OE1n1TDwuXryg/giphy.gif">
+<img src="https://media.giphy.com/media/3o7aDgIxZnbKEPT6CY/giphy.gif">
 
 <p>
-You came into my life quietly, but your presence created something special.
-Maybe you don’t even realize it, but the way you exist, the way you speak, and the way you are… it makes ordinary days feel warmer and a little more meaningful.
-Sometimes just knowing that you are there somewhere in this world brings a small kind of comfort and happiness.
-You might see this as something simple, but the truth is — you made moments feel brighter just by being you.
+
+Irmak, sometimes a person enters life quietly
+and changes something inside us.
+Not with dramatic moments, but with small conversations,
+small smiles, and simple presence.
+
+You may not realize it,
+but your presence can make ordinary days feel brighter
+and simple moments feel meaningful.
+
 </p>
 
 <button onclick="next()">Next</button>
@@ -405,13 +194,17 @@ You might see this as something simple, but the truth is — you made moments fe
 
 <h1>Click The Heart</h1>
 
-<div class="bigHeart" onclick="showHeartMessage()">❤️</div>
+<div class="bigHeart" onclick="showMessage()">❤️</div>
 
-<p id="heartMsg" style="display:none">
-Some feelings are difficult to explain with words.
-They appear quietly in the heart and slowly grow stronger with time.
-Sometimes you become important in someone’s life without any big moment, without any special reason.
-It just happens naturally… and before you even realize it, your presence begins to mean more than you ever expected.
+<p id="msg" style="display:none">
+
+Irmak, some feelings are hard to describe with simple words.
+They grow quietly inside the heart.
+
+Sometimes you suddenly remember someone
+and you find yourself smiling for no reason.
+That quiet feeling is something special.
+
 </p>
 
 <button onclick="next()">Next</button>
@@ -422,16 +215,19 @@ It just happens naturally… and before you even realize it, your presence begin
 
 <div class="page" id="page5">
 
-<h1>Life Changed</h1>
+<h1>Life Feels Different</h1>
 
 <img src="https://media.giphy.com/media/QaFPEW8KKvouyhQPaj/giphy.gif">
 
 <p>
-Before you came into my life, everything felt ordinary.
-Days passed quietly, moments felt simple, and nothing really stood out in a special way.
-But somehow, when you appeared, even the smallest moments started to feel different.
-A simple conversation, a small smile, or even the thought of you could suddenly make an ordinary day feel a little more meaningful.
-It’s strange how one person can quietly change the feeling of so many moments… just by being there..
+
+Before meeting you, Irmak,
+life felt like normal passing days.
+
+But sometimes one person appears
+and suddenly everything feels a little more colorful,
+a little more meaningful.
+
 </p>
 
 <button onclick="next()">Next</button>
@@ -444,24 +240,19 @@ It’s strange how one person can quietly change the feeling of so many moments�
 
 <h1>My Heart</h1>
 
-<div class="realHeart">
-
-<div class="heartText">
-I Love You<br>Irmak ❤️
-</div>
-
-</div>
+<div class="bigHeart">❤️</div>
 
 <p>
 
-If emotions were simple, explaining them would be easy.
-But feelings are rarely that simple.
-Sometimes you become important in someone’s life without either of us even realizing when it started.
-There isn’t always a big moment or a clear reason.
-One day you just notice that you’ve quietly found a place inside someone’s heart.
-And once that happens…
-that place never truly disappears.
+Irmak, if I tried to explain everything in one sentence,
+it would still not be enough.
 
+Some people become important without planning it.
+Without expecting it.
+Without even realizing when it started.
+
+But once they become part of your heart,
+they stay there forever.
 
 </p>
 
@@ -478,13 +269,14 @@ that place never truly disappears.
 <img src="https://media.giphy.com/media/v6GDwXiHIWqJy/giphy.gif">
 
 <p>
-Life rarely follows the plans we imagine.
-We think we know how things will unfold, how our days will pass, and who will walk beside us along the way. But somehow, life has its own quiet surprises.
-Sometimes the most beautiful emotions arrive in the most unexpected ways.
-Not with noise, not with grand moments, but slowly… gently… like a feeling that grows without asking for permission.
-And before you even realize it, someone begins to mean more to you than you ever planned.
-That’s the strange beauty of life —
-sometimes the moments we never planned, and the people we never expected, end up becoming the ones our hearts care about the most.
+
+Irmak, life rarely follows the plans we imagine.
+Sometimes the most beautiful emotions
+appear in the most unexpected ways.
+
+And those unexpected moments
+often become the most meaningful ones.
+
 </p>
 
 <button onclick="next()">Next</button>
@@ -500,12 +292,13 @@ sometimes the moments we never planned, and the people we never expected, end up
 <img src="https://media.giphy.com/media/ha6vsupXjJVMZ4WJsT/giphy.gif">
 
 <p>
-Thank you for the conversations we’ve shared,
-for the small moments of laughter,
-and for the warmth you bring just by being yourself.
-You may not always realize it, but the way you speak, the way you smile, and the way you exist can make ordinary moments feel a little brighter.
-Sometimes even the simplest conversations can turn a normal day into something memorable.
-And in ways you might not even notice, you’ve brought a quiet kind of happiness into moments that would have otherwise been just another ordinary day.
+
+Irmak, thank you for the conversations,
+for the smiles,
+and for the warmth you bring.
+
+Sometimes even small moments
+can make someone’s entire day brighter.
 
 </p>
 
@@ -520,11 +313,13 @@ And in ways you might not even notice, you’ve brought a quiet kind of happines
 <h1>Always Special</h1>
 
 <p>
-Time changes many things in life.
-Days pass, moments fade, and life keeps moving forward in ways we never fully expect.
-But sometimes there are certain people who remain special no matter how much time passes.
-Not because of dramatic stories or unforgettable scenes, but because their presence once meant something real… something sincere.
-And when someone becomes meaningful in that quiet, genuine way, they leave a place in the heart that time can never truly erase.
+
+Irmak, time changes many things in life.
+People move forward, situations change,
+and life continues in different directions.
+
+But some people remain special forever,
+because their presence once meant something real.
 
 </p>
 
@@ -539,21 +334,21 @@ And when someone becomes meaningful in that quiet, genuine way, they leave a pla
 <h1>Irmak ❤️</h1>
 
 <p>
-And now, as this little journey reaches its final page, there is something I want to say from the bottom of my heart.
-In life we meet many people. Some become memories, some become stories that fade with time.
-But very rarely, someone comes into our life and becomes everything.
-For me, that person is you.
-You are not just someone special to me — you are the reason many of my days feel brighter, calmer, and happier. Your smile, your voice, and your presence bring a kind of warmth into my life that I can’t describe completely with words.
-And the truth is simple…
-there is no one else for me.
-In my life, in my heart, it has always been you.
-I love you, Irmak.
-More than words can ever fully explain.
-  
+
+At the end of this small journey,
+there is only one simple truth.
+
+Some people become memories,
+some become stories,
+and some quietly become
+a permanent place inside the heart.
+
+And Irmak,
+you will always have that place.
+
 </p>
 
 </div>
-
 
 <script>
 
@@ -580,63 +375,33 @@ page++
 
 document.getElementById("page"+page).classList.add("active")
 
-if(page===10){
-fireworks()
 }
 
-}
+function showMessage(){
 
-function showText(){
-
-document.getElementById("heartMsg").style.display="block"
+document.getElementById("msg").style.display="block"
 
 }
 
-
-/* particles */
+/* floating hearts */
 
 setInterval(()=>{
 
-let p=document.createElement("div")
+let heart=document.createElement("div")
 
-p.className="particle"
+heart.innerHTML="❤️"
 
-p.style.left=Math.random()*100+"vw"
+heart.className="heart"
 
-p.style.animationDuration=4+Math.random()*4+"s"
+heart.style.left=Math.random()*100+"vw"
 
-document.body.appendChild(p)
+heart.style.fontSize=(20+Math.random()*20)+"px"
 
-setTimeout(()=>p.remove(),6000)
+document.body.appendChild(heart)
 
-},200)
+setTimeout(()=>heart.remove(),8000)
 
-
-/* fireworks */
-
-function fireworks(){
-
-setInterval(()=>{
-
-let f=document.createElement("div")
-
-f.innerHTML="🎆"
-
-f.style.position="fixed"
-
-f.style.left=Math.random()*100+"vw"
-
-f.style.top=Math.random()*100+"vh"
-
-f.style.fontSize="40px"
-
-document.body.appendChild(f)
-
-setTimeout(()=>f.remove(),1500)
-
-},300)
-
-}
+},500)
 
 </script>
 
